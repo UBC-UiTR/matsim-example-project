@@ -1,0 +1,188 @@
+<?xml version="1.0" ?>
+<!DOCTYPE config SYSTEM "http://www.matsim.org/files/dtd/config_v2.dtd">
+<config>
+
+	<module name="global">
+		<param name="randomSeed" value="4711" />
+		<param name="coordinateSystem" value="EPSG:2955" />
+	</module>
+
+	<module name="network">
+		<param name="inputNetworkFile" value="network.xml" />
+	</module>
+
+	    <module name="transit">
+
+
+        <!-- Comma-separated list of transportation modes that are handled as transit. Defaults to 'pt'. -->
+        <param name="transitModes" value="pt"/>
+
+        <!-- Input file containing the transit schedule to be simulated. -->
+        <param name="transitScheduleFile" value="TransitScheduleInt.xml"/>
+
+
+
+        <!-- Input file containing the vehicles used by the departures in the transit schedule. -->
+        <param name="vehiclesFile" value="BCTransit_Vehicles.xml"/>
+    </module>
+
+	    <module name="vehicles">
+        <param name="vehiclesFile" value="BCTransit_Vehicles.xml"/>
+    </module>
+
+	<module name="plans">
+		<param name="inputPlansFile" value="Plan12.xml" />
+	</module>
+
+	<module name="controler">
+		<param name="outputDirectory" value="./output" />
+		<param name="firstIteration" value="0" />
+		<param name="lastIteration" value="5" />
+	</module>
+
+	<module name="qsim">
+		<!-- "start/endTime" of MobSim (00:00:00 == take earliest activity time/ run as long as active vehicles exist) -->
+		<param name="startTime" value="00:00:00" />
+		<param name="flowCapacityFactor" value="0.05"	/>
+		<param name="storageCapacityFactor" value="0.07"	/>
+		<param name="endTime" value="24:00:00" />
+	
+		<param name = "snapshotperiod"	value = "00:00:00"/> <!-- 00:00:00 means NO snapshot writing -->
+	</module>
+
+
+	
+    <module name="cadytsCar" >
+          <!--  <param name="calibratedLinks" value="21263,6307 ,21261,62735,73780,62718,69861,69816,69887,59669,63175,59671,63177,77523,77536,62773,6387 ,62771,6389 ,94882,63224,6134 ,94634,29400,94632,6138 ,94631,29396,63232,6174 ,63225,63235,69397,69322,69213,69743,69178,69349,59687,63273,59689,63271,6396 ,69574,69572,94834,7079 ,94836,83285,7091 ,73370,28801,29985,62324,73378,29403,77457,29406,73487,61727,94586,76938,30023,73685,59659,6872 ,94594,27784,94597,33057,7110 ,73652,6208 ,78574,7048 ,63258,6130 ,94894,94892,6184 ,6132 ,6181 ,6129 ,69089,69325,36924,6118 ,6031 ,6030 ,64071,69603,6161 ,94609,69132,94612,6570 ,92185,6171 ,92187,6169 ,69598,63241,69301,81363,6376 ,64067,63269,6194 ,6137 ,6196 ,6140 ,6195 ,6173 ,6198 ,6172 ,48675,47094,48680,74133,48629,74145,48633,6587 ,63134,63132,6581 ,63131,6583 ,63129,73723,95426,6867 ,94963,75082,94987,94975,94389,26960,75091,47159,21291,47158,21293,47984,28702,47982,27495,94246,59665,94240,89644,62299,47496,62298,89708,28398,29786,89706,63947,63019,62875,63013,63940,26787,62883,59858,59454,27100,27076,81287,59949,81256,77715,32029,81269,32025,72719,72703,72723,62140,90102,25953,91310,25954,30153,94731,30155,96233,30556,30546,30558,73786,62690,29185,62716,30966,30896,30968,95379,28726,88988,62457,7103 ,77492,7023 ,77488,94347,94575,77502,62738,73026,62652,29109,6061 ,29730,63146,6224 ,77712,55835,81272,30403,62939,94538,7232 ,89702,89700,6305 ,62317,27647,30526,55393,30527,55396,95008,70842,29385,95006,30568,25990,30565,25991,50459,95003,50325,94569,29386,94568,94999,78511,94565,71681,55382,55357,55384,83061,94719,94726,53063,53078,29302,94674,27781,62344,49860,62366,73534,62355,73572,73551,94774,94762,29324,64043,59193,73714,78522,73702,29319,63302,29328,63296,26995,59783,26997,59781,6855 ,6857 ,50287,94740,26994,59780" /> -->
+        <!-- The last second of the day to be used for calibration.  hh:mm:ss format -->
+        <param name="endTime" value="86399" />
+        <param name="freezeIteration" value="2147483647" />
+        <param name="minFlowStddevVehH" value="25.0" />
+        <param name="preparatoryIterations" value="1" />
+        <param name="regressionInertia" value="0.95" />
+        <!-- The first second of the day to be used for calibration.  hh:mm:ss format -->
+        <param name="startTime" value="0" />
+        <!-- Length of time bin for which counts are aggregated.  IN SECONDS!!!!  Default is 3600. -->
+        <param name="timeBinSize" value="3600" />
+        <param name="useBruteForce" value="false" />
+        <param name="varianceScale" value="1.0" />
+        <param name="writeAnalysisFile" value="true" />
+    </module>
+
+
+
+  <module name="counts" >
+		<!-- Transport modes that will be respected for the counts comparison. 'car' is default, which includes also bussed from the pt simulation module. Use this parameter in combination with 'filterModes' = true! -->
+		<param name="analyzedModes" value="car" />
+		<!-- Specifies over how many iterations the link volumes should be averaged that are used for the counts comparison. Use 1 or 0 to only use the link volumes of a single iteration. This values cannot be larger than the value specified for writeCountsInterval -->
+		<param name="averageCountsOverIterations" value="5" />
+		<!-- factor by which to re-scale the simulated values.  necessary when simulation runs with something different from 100%.  needs to be adapted manually -->
+		<param name="countsScaleFactor" value="20.0" />
+		<!-- distance to distanceFilterCenterNode to include counting stations. The unit of distance is the Euclidean distance implied by the coordinate system -->
+		<param name="distanceFilter" value="null" />
+		<!-- node id for center node of distance filter -->
+		<param name="distanceFilterCenterNode" value="null" />
+		<!-- If true, link counts from legs performed on modes not included in the 'analyzedModes' parameter are ignored. -->
+		<param name="filterModes" value="false" />
+		<!-- The Coordinates Reference System in which the coordinates are expressed in the input file. At import, the coordinates will be converted to the coordinate system defined in "global", and willbe converted back at export. If not specified, no conversion happens. -->
+		<param name="inputCRS" value="null" />
+		<!-- input file name to counts package -->
+		<param name="inputCountsFile" value="Counts3.xml" />
+		<!-- possible values: `html', `kml', `txt', `all' -->
+		<param name="outputformat" value="txt" />
+		<!-- Specifies how often the counts comparison should be calculated and written. -->
+		<param name="writeCountsInterval" value="5" />
+	</module>
+
+	<module name="planCalcScore">
+		<param name="learningRate" value="1.0" />
+		<param name="BrainExpBeta" value="2.0" />
+
+		<param name="lateArrival" value="-18" />
+		<param name="earlyDeparture" value="-0" />
+		<param name="performing" value="+6" />
+		<param name="waiting" value="-0" />
+		<parameterset type="activityParams" >
+			<param name="activityType"            value="home" /> <!-- home -->
+			<param name="priority"        value="1" />
+			<param name="typicalDuration" value="12:00:00" />
+		</parameterset>
+		<parameterset type="activityParams" >
+			<param name="activityType"            value="workschool" /> <!-- workschool -->
+			<param name="priority"        value="1" />
+			<param name="typicalDuration" value="08:00:00" />
+			<param name="openingTime"     value="07:00:00" />
+			<param name="latestStartTime" value="09:00:00" />
+			<param name="earliestEndTime" value="16:00:00" />
+			<param name="closingTime"     value="24:00:00" />
+		</parameterset>
+		<parameterset type="activityParams" >
+			<param name="activityType"            value="recreation" /> <!-- recreation -->
+			<param name="priority"        value="1" />
+			<param name="typicalDuration" value="02:00:00" />
+			<param name="openingTime"     value="06:00:00" />
+			<param name="latestStartTime" value="20:00:00" />
+			<param name="earliestEndTime" value="07:00:00" />
+			<param name="closingTime"     value="21:00:00" />
+		</parameterset>
+		<parameterset type="activityParams" >
+			<param name="activityType"            value="shopping" /> <!-- shopping -->
+			<param name="priority"        value="1" />
+			<param name="typicalDuration" value="03:00:00" />
+			<param name="openingTime"     value="06:00:00" />
+			<param name="latestStartTime" value="20:00:00" />
+			<param name="earliestEndTime" value="07:00:00" />
+			<param name="closingTime"     value="21:00:00" />
+		</parameterset>
+		<parameterset type="activityParams" >
+			<param name="activityType"            value="personal" /> <!-- personal -->
+			<param name="priority"        value="1" />
+			<param name="typicalDuration" value="02:00:00" />
+			<param name="openingTime"     value="06:00:00" />
+			<param name="latestStartTime" value="20:00:00" />
+			<param name="earliestEndTime" value="07:00:00" />
+			<param name="closingTime"     value="21:00:00" />
+		</parameterset>
+		<parameterset type="activityParams" >
+			<param name="activityType"            value="pickupdropoff" /> <!-- pickupdropoff -->
+			<param name="priority"        value="1" />
+			<param name="typicalDuration" value="02:00:00" />
+			<param name="openingTime"     value="06:00:00" />
+			<param name="latestStartTime" value="20:00:00" />
+			<param name="earliestEndTime" value="07:00:00" />
+			<param name="closingTime"     value="21:00:00" />
+		</parameterset>
+		<parameterset type="activityParams" >
+			<param name="activityType"            value="inthome" /> <!-- inthome -->
+			<param name="priority"        value="1" />
+			<param name="typicalDuration" value="2:00:00" />
+			<param name="openingTime"     value="07:00:00" />
+			<param name="latestStartTime" value="20:00:00" />
+			<param name="earliestEndTime" value="08:00:00" />
+			<param name="closingTime"     value="24:00:00" />
+		</parameterset>
+		<parameterset type="activityParams" >
+			<param name="activityType"            value="socres" /> <!-- socres -->
+			<param name="priority"        value="1" />
+			<param name="typicalDuration" value="02:00:00" />
+			<param name="openingTime"     value="06:00:00" />
+			<param name="latestStartTime" value="20:00:00" />
+			<param name="earliestEndTime" value="07:00:00" />
+			<param name="closingTime"     value="21:00:00" />
+		</parameterset>
+
+	</module>
+	
+	<module name="strategy">
+		<param name="maxAgentPlanMemorySize" value="5" /> <!-- 0 means unlimited -->
+
+		<param name="ModuleProbability_1" value="0.8" />
+		<param name="Module_1" value="BestScore" />
+
+		<param name="ModuleProbability_2" value="0.2" />
+		<param name="Module_2" value="ReRoute" />
+	</module>
+
+
+
+</config>

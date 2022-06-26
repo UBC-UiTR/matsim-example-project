@@ -1,16 +1,16 @@
-2022-06-24T14:20:49,138  INFO Gbl:63 JVM: 14.0.1; Oracle Corporation; mixed mode, sharing; 64-bit
-2022-06-24T14:20:49,138  INFO Gbl:67 OS: Windows 10; 10.0; amd64
-2022-06-24T14:20:49,138  INFO Gbl:70 CPU cores: 12
-2022-06-24T14:20:49,143  INFO Gbl:71 max. Memory: 1024.0MB (1073741824B)
-2022-06-24T14:20:49,143  INFO Gbl:109 MATSim-Build: r80b56afa925946d766cb91527373393989f56e81 (2022-04-11 15:06:39)
-2022-06-24T14:20:49,148  INFO ControlerListenerManagerImpl:107 calling notifyStartup on org.matsim.guice.DependencyGraphControlerListener
-2022-06-24T14:20:49,148  INFO MemoryObserver:41 used RAM: 237 MB  free: 156 MB  total: 394 MB
-2022-06-24T14:20:49,228  INFO ControlerListenerManagerImpl:107 calling notifyStartup on org.matsim.counts.CountsControlerListener
-2022-06-24T14:20:49,230  INFO ControlerListenerManagerImpl:107 calling notifyStartup on org.matsim.analysis.ModeStatsControlerListener
-2022-06-24T14:20:49,230  INFO ControlerListenerManagerImpl:107 calling notifyStartup on org.matsim.analysis.ScoreStatsControlerListener
-2022-06-24T14:20:49,233  INFO ControlerListenerManagerImpl:110 all ControlerStartupListeners called.
-2022-06-24T14:20:49,233  INFO ControlerUtils:79 config dump before iterations start
-2022-06-24T14:20:49,258  INFO ControlerUtils:83 
+2022-06-24T14:37:02,149  INFO Gbl:63 JVM: 14.0.1; Oracle Corporation; mixed mode, sharing; 64-bit
+2022-06-24T14:37:02,149  INFO Gbl:67 OS: Windows 10; 10.0; amd64
+2022-06-24T14:37:02,149  INFO Gbl:70 CPU cores: 12
+2022-06-24T14:37:02,152  INFO Gbl:71 max. Memory: 1024.0MB (1073741824B)
+2022-06-24T14:37:02,154  INFO Gbl:109 MATSim-Build: r80b56afa925946d766cb91527373393989f56e81 (2022-04-11 15:06:39)
+2022-06-24T14:37:02,157  INFO ControlerListenerManagerImpl:107 calling notifyStartup on org.matsim.guice.DependencyGraphControlerListener
+2022-06-24T14:37:02,159  INFO MemoryObserver:41 used RAM: 240 MB  free: 159 MB  total: 400 MB
+2022-06-24T14:37:02,242  INFO ControlerListenerManagerImpl:107 calling notifyStartup on org.matsim.counts.CountsControlerListener
+2022-06-24T14:37:02,245  INFO ControlerListenerManagerImpl:107 calling notifyStartup on org.matsim.analysis.ModeStatsControlerListener
+2022-06-24T14:37:02,245  INFO ControlerListenerManagerImpl:107 calling notifyStartup on org.matsim.analysis.ScoreStatsControlerListener
+2022-06-24T14:37:02,245  INFO ControlerListenerManagerImpl:110 all ControlerStartupListeners called.
+2022-06-24T14:37:02,247  INFO ControlerUtils:79 config dump before iterations start
+2022-06-24T14:37:02,262  INFO ControlerUtils:83 
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE config SYSTEM "http://www.matsim.org/files/dtd/config_v2.dtd">
@@ -33,18 +33,6 @@
 		<param name="mutationAffectsDuration" value="true" />
 		<!-- Default:1800.0; Defines how many seconds a time mutation can maximally shift a time. -->
 		<param name="mutationRange" value="1800.0" />
-	</module>
-	<module name="cadytsCar" >
-		<param name="endTime" value="86399" />
-		<param name="freezeIteration" value="2147483647" />
-		<param name="minFlowStddevVehH" value="25.0" />
-		<param name="preparatoryIterations" value="1" />
-		<param name="regressionInertia" value="0.95" />
-		<param name="startTime" value="0" />
-		<param name="timeBinSize" value="3600" />
-		<param name="useBruteForce" value="false" />
-		<param name="varianceScale" value="1.0" />
-		<param name="writeAnalysisFile" value="true" />
 	</module>
 	<module name="changeMode" >
 		<!-- Defines whether car availability is considered be considered or not. An agent has no car only if it has no license, or never access to a car. Default: true -->
@@ -704,10 +692,10 @@
 
 </config>
 
-2022-06-24T14:20:49,283  INFO ControlerUtils:84 Complete config dump done.
-2022-06-24T14:20:49,283  INFO ControlerUtils:85 Checking consistency of config...
-2022-06-24T14:20:49,285  INFO VspConfigConsistencyCheckerImpl:63 NOT running vsp config consistency check because vsp defaults checking level is set to IGNORE
-2022-06-24T14:20:49,290 ERROR MatsimRuntimeModifications:75 Getting uncaught Exception in Thread main
+2022-06-24T14:37:02,300  INFO ControlerUtils:84 Complete config dump done.
+2022-06-24T14:37:02,300  INFO ControlerUtils:85 Checking consistency of config...
+2022-06-24T14:37:02,303  INFO VspConfigConsistencyCheckerImpl:63 NOT running vsp config consistency check because vsp defaults checking level is set to IGNORE
+2022-06-24T14:37:02,305 ERROR MatsimRuntimeModifications:75 Getting uncaught Exception in Thread main
 java.lang.RuntimeException: Unmaterialized config group: cadytsCar
 	at org.matsim.core.config.consistency.UnmaterializedConfigGroupChecker.checkConsistency(UnmaterializedConfigGroupChecker.java:32) ~[matsim-14.0.jar:?]
 	at org.matsim.core.config.Config.checkConsistency(Config.java:239) ~[matsim-14.0.jar:?]
@@ -719,9 +707,9 @@ java.lang.RuntimeException: Unmaterialized config group: cadytsCar
 	at org.matsim.core.controler.NewControler.run(NewControler.java:82) [matsim-14.0.jar:?]
 	at org.matsim.core.controler.Controler.run(Controler.java:249) [matsim-14.0.jar:?]
 	at org.matsim.project.RunMatsim.main(RunMatsim.java:86) [classes/:?]
-2022-06-24T14:20:49,303  INFO MatsimRuntimeModifications:79 S H U T D O W N   ---   start shutdown.
-2022-06-24T14:20:49,303 ERROR MatsimRuntimeModifications:81 ERROR --- This is an unexpected shutdown!
-2022-06-24T14:20:49,303 ERROR MatsimRuntimeModifications:84 Shutdown possibly caused by the following Exception:
+2022-06-24T14:37:02,315  INFO MatsimRuntimeModifications:79 S H U T D O W N   ---   start shutdown.
+2022-06-24T14:37:02,318 ERROR MatsimRuntimeModifications:81 ERROR --- This is an unexpected shutdown!
+2022-06-24T14:37:02,318 ERROR MatsimRuntimeModifications:84 Shutdown possibly caused by the following Exception:
 java.lang.RuntimeException: Unmaterialized config group: cadytsCar
 	at org.matsim.core.config.consistency.UnmaterializedConfigGroupChecker.checkConsistency(UnmaterializedConfigGroupChecker.java:32) ~[matsim-14.0.jar:?]
 	at org.matsim.core.config.Config.checkConsistency(Config.java:239) ~[matsim-14.0.jar:?]
@@ -733,14 +721,14 @@ java.lang.RuntimeException: Unmaterialized config group: cadytsCar
 	at org.matsim.core.controler.NewControler.run(NewControler.java:82) [matsim-14.0.jar:?]
 	at org.matsim.core.controler.Controler.run(Controler.java:249) [matsim-14.0.jar:?]
 	at org.matsim.project.RunMatsim.main(RunMatsim.java:86) [classes/:?]
-2022-06-24T14:20:49,303  INFO ControlerListenerManagerImpl:121 calling notifyShutdown on org.matsim.core.controler.corelisteners.EventsHandlingImpl
-2022-06-24T14:20:49,303  INFO ControlerListenerManagerImpl:121 calling notifyShutdown on org.matsim.core.controler.corelisteners.DumpDataAtEndImpl
-2022-06-24T14:20:49,303  INFO ControlerListenerManagerImpl:126 calling notifyShutdown on org.matsim.analysis.ScoreStatsControlerListener
-2022-06-24T14:20:49,305  INFO ControlerListenerManagerImpl:126 calling notifyShutdown on org.matsim.analysis.IterationTravelStatsControlerListener
-2022-06-24T14:20:49,308  INFO IterationTravelStatsControlerListener:108 Writing all Person and Attributes to personscsv
-2022-06-24T14:20:49,433  INFO IterationTravelStatsControlerListener:152 ...done
-2022-06-24T14:20:49,435  INFO ControlerListenerManagerImpl:129 all ControlerShutdownListeners called.
-2022-06-24T14:20:49,438 ERROR MatsimRuntimeModifications:99 ERROR --- MATSim unexpectedly terminated. Please check the output or the logfile with warnings and errors for hints.
-2022-06-24T14:20:49,443 ERROR MatsimRuntimeModifications:100 ERROR --- results should not be used for further analysis.
-2022-06-24T14:20:49,450  INFO MatsimRuntimeModifications:102 S H U T D O W N   ---   shutdown completed.
-2022-06-24T14:20:49,450 ERROR MatsimRuntimeModifications:104 ERROR --- This was an unexpected shutdown! See the log file for a possible reason.
+2022-06-24T14:37:02,318  INFO ControlerListenerManagerImpl:121 calling notifyShutdown on org.matsim.core.controler.corelisteners.EventsHandlingImpl
+2022-06-24T14:37:02,318  INFO ControlerListenerManagerImpl:121 calling notifyShutdown on org.matsim.core.controler.corelisteners.DumpDataAtEndImpl
+2022-06-24T14:37:02,318  INFO ControlerListenerManagerImpl:126 calling notifyShutdown on org.matsim.analysis.ScoreStatsControlerListener
+2022-06-24T14:37:02,318  INFO ControlerListenerManagerImpl:126 calling notifyShutdown on org.matsim.analysis.IterationTravelStatsControlerListener
+2022-06-24T14:37:02,320  INFO IterationTravelStatsControlerListener:108 Writing all Person and Attributes to personscsv
+2022-06-24T14:37:02,408  INFO IterationTravelStatsControlerListener:152 ...done
+2022-06-24T14:37:02,408  INFO ControlerListenerManagerImpl:129 all ControlerShutdownListeners called.
+2022-06-24T14:37:02,408 ERROR MatsimRuntimeModifications:99 ERROR --- MATSim unexpectedly terminated. Please check the output or the logfile with warnings and errors for hints.
+2022-06-24T14:37:02,408 ERROR MatsimRuntimeModifications:100 ERROR --- results should not be used for further analysis.
+2022-06-24T14:37:02,408  INFO MatsimRuntimeModifications:102 S H U T D O W N   ---   shutdown completed.
+2022-06-24T14:37:02,408 ERROR MatsimRuntimeModifications:104 ERROR --- This was an unexpected shutdown! See the log file for a possible reason.

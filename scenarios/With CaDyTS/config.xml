@@ -52,21 +52,21 @@
 
 
 	
-    <module name="cadytsCar" >
+    <module name="cadytsIntegration" >
           <!--  <param name="calibratedLinks" value="21263,6307 ,21261,62735,73780,62718,69861,69816,69887,59669,63175,59671,63177,77523,77536,62773,6387 ,62771,6389 ,94882,63224,6134 ,94634,29400,94632,6138 ,94631,29396,63232,6174 ,63225,63235,69397,69322,69213,69743,69178,69349,59687,63273,59689,63271,6396 ,69574,69572,94834,7079 ,94836,83285,7091 ,73370,28801,29985,62324,73378,29403,77457,29406,73487,61727,94586,76938,30023,73685,59659,6872 ,94594,27784,94597,33057,7110 ,73652,6208 ,78574,7048 ,63258,6130 ,94894,94892,6184 ,6132 ,6181 ,6129 ,69089,69325,36924,6118 ,6031 ,6030 ,64071,69603,6161 ,94609,69132,94612,6570 ,92185,6171 ,92187,6169 ,69598,63241,69301,81363,6376 ,64067,63269,6194 ,6137 ,6196 ,6140 ,6195 ,6173 ,6198 ,6172 ,48675,47094,48680,74133,48629,74145,48633,6587 ,63134,63132,6581 ,63131,6583 ,63129,73723,95426,6867 ,94963,75082,94987,94975,94389,26960,75091,47159,21291,47158,21293,47984,28702,47982,27495,94246,59665,94240,89644,62299,47496,62298,89708,28398,29786,89706,63947,63019,62875,63013,63940,26787,62883,59858,59454,27100,27076,81287,59949,81256,77715,32029,81269,32025,72719,72703,72723,62140,90102,25953,91310,25954,30153,94731,30155,96233,30556,30546,30558,73786,62690,29185,62716,30966,30896,30968,95379,28726,88988,62457,7103 ,77492,7023 ,77488,94347,94575,77502,62738,73026,62652,29109,6061 ,29730,63146,6224 ,77712,55835,81272,30403,62939,94538,7232 ,89702,89700,6305 ,62317,27647,30526,55393,30527,55396,95008,70842,29385,95006,30568,25990,30565,25991,50459,95003,50325,94569,29386,94568,94999,78511,94565,71681,55382,55357,55384,83061,94719,94726,53063,53078,29302,94674,27781,62344,49860,62366,73534,62355,73572,73551,94774,94762,29324,64043,59193,73714,78522,73702,29319,63302,29328,63296,26995,59783,26997,59781,6855 ,6857 ,50287,94740,26994,59780" /> -->
         <!-- The last second of the day to be used for calibration.  hh:mm:ss format -->
-        <param name="endTime" value="86399" />
-        <param name="freezeIteration" value="2147483647" />
-        <param name="minFlowStddevVehH" value="25.0" />
-        <param name="preparatoryIterations" value="1" />
-        <param name="regressionInertia" value="0.95" />
-        <!-- The first second of the day to be used for calibration.  hh:mm:ss format -->
-        <param name="startTime" value="0" />
-        <!-- Length of time bin for which counts are aggregated.  IN SECONDS!!!!  Default is 3600. -->
-        <param name="timeBinSize" value="3600" />
-        <param name="useBruteForce" value="false" />
-        <param name="varianceScale" value="1.0" />
-        <param name="writeAnalysisFile" value="true" />
+<!--        <param name="endTime" value="86399" />-->
+<!--        <param name="freezeIteration" value="2147483647" />-->
+<!--        <param name="minFlowStddevVehH" value="25.0" />-->
+<!--        <param name="preparatoryIterations" value="1" />-->
+<!--        <param name="regressionInertia" value="0.95" />-->
+<!--        &lt;!&ndash; The first second of the day to be used for calibration.  hh:mm:ss format &ndash;&gt;-->
+<!--        <param name="startTime" value="0" />-->
+<!--        &lt;!&ndash; Length of time bin for which counts are aggregated.  IN SECONDS!!!!  Default is 3600. &ndash;&gt;-->
+<!--        <param name="timeBinSize" value="3600" />-->
+<!--        <param name="useBruteForce" value="false" />-->
+<!--        <param name="varianceScale" value="1.0" />-->
+<!--        <param name="writeAnalysisFile" value="true" />-->
     </module>
 
 
